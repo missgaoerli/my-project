@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>流程配置</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../static/plugins/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/plugins/ionicons/ionicons.min.css">
+    <!-- Ionicons -->
+    
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../static/plugins/datatables/dataTables.bootstrap.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../static/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../static/dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body onload="init_first()" class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="../../index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>Devops</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Devops</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+             <!-- 页面头的用户信息开始 -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../../static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span id="showSpan" class="hidden-xs"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="../../static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <p id="showUser"></p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-block btn-flat" onclick="loginOut()">退出</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- 页面头的用户信息结束 -->
+        </nav>
+    </header>
+
+    <!-- 左侧菜单开始 -->
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">导航栏</li>
+                
+               <!--左侧导航栏模块1 start-->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>多环境信息</span>
+                        		<span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i></span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../multi/index.html"><i class="fa fa-circle-o"></i>多环境列表</a></li>
+                        <li><a href="../deploy/one_deploy.html"><i class="fa fa-circle-o"></i>一键部署</a></li>
+                    </ul>
+                </li>
+                <!--左侧导航栏模块1 end-->
+                 
+                 <!--左侧导航栏模块3 start-->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>多环境配置</span>
+                        		<span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i></span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../config/list.html"><i class="fa fa-circle-o"></i>多环境类型配置</a></li>
+                        <li><a href="../connect/connect.html"><i class="fa fa-circle-o"></i>多环境连通配置</a></li>
+                    </ul>
+                </li>
+                <!--左侧导航栏模块3 end-->
+                 
+                <!--左侧导航栏模块4 start-->
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>流程配置</span>
+                        		<span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i></span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../flowAtom/flowAtom.html"><i class="fa fa-circle-o"></i>原子流程</a></li>
+                        <li><a href="flowType.html"><i class="fa fa-circle-o"></i>流程类型</a></li>
+                    </ul>
+                </li>
+                <!--左侧导航栏模块4 end-->
+                 
+                <!--左侧导航栏模块2 start-->
+              	<li class="treeview">
+                    <a href="#"> <i class="fa fa-dashboard"></i> <span>用户权限</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> 用户信息</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    </ul>
+                </li>
+				<!--左侧导航栏模块2 end-->
+				
+                <!--<li class="header">LABELS</li>
+                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
+            </ul>
+        </section>
+        <!-- /.sidebar  end-->
+    </aside>
+    <!-- 左侧菜单结束 -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        
+        <!-- 中部显示开始-->
+        <section class="content-header">
+            <h1>
+                <small>流程类型</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 流程配置</a></li>
+                <li><a href="#" >流程类型</a></li>
+            </ol>
+        </section>
+		<!-- 中部显示结束-->
+		
+         <!-- Main content -->
+         <!-- 列表开始 -->
+        <section class="content">
+        	
+        		<!--row start-->
+            <div class="row" id="envFlowAtomList" >
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header text-center">
+                            <h1 class="box-title "style="margin-bottom: 20px;"><font size="5">流程类型列表</font></h1>
+                        </div>
+                        
+                        	 	<!--多环境选择与申请按钮 -->
+                        <div class="box-body">
+	                        	<div class="form-inline form-group ">
+			              		<label for>流程执行类型:</label>
+			              		
+		                			<select class="form-control input-sm" name="" id="opTypeList" style="width: 150px;"></select>
+		                			<a href="javascript:void(0);" class="btn btn-info " style='margin-left: 30px;' role="button" onclick="addFlowType()">新增</a>
+		                			
+							</div>
+							<!--多环境类型列表 -->
+                        		<table id="envTable" class="col-md-12 table table-bordered table-striped table-hover" style="table-layout:fixed">
+                           	 	<!-- 表格里字段-->
+                                <thead>
+                                <tr><th>流程名称</th><th>流程描述</th><th>流程执行类型</th><th>创建时间</th><th>创建人</th><th>操作</th></tr>
+                                </thead>
+                                <!-- 表格里内容-->
+                                <tbody id="flowTypeList">
+                                </tbody>
+                            </table>
+                            
+
+                        </div>
+                        <!--box-body end-->
+                    </div>
+                    <!--box end-->
+                </div>
+            </div>
+        		<!--row end-->
+        
+        		<!--row 流程添加与修改 start-->
+            <div class="row" id="addOrUpFlowType" style="display: none;">
+            	
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border col-md-12">
+                            <div class="col-md-5"></div>
+				          	<h3 class="box-title col-md-7" style="margin: 5px 0px;"><font size="5">流程类型配置</font></h3>
+                        </div>
+                        	<!--box-body start -->
+                        <div class="box-body">
+								
+							<!--默认为不显示 start-->
+                        		<div class="selectDiv">
+                        			
+                        			<!--存放流程类型Id-->
+                        			<input type="hidden" id="flowTypeId" />
+                        			
+								<div class="form-inline form-group" >
+									<label for="" class="col-md-5" style="text-align: right; margin: 15px 0px;">流程名称:</label>
+										<div class="col-md-7">
+											<input type="text" id="flowType_name" class="form-control  input-sm" style='width:200px;margin: 10px 0px;' placeholder="请输入" >
+										</div>
+								</div>
+								
+								
+								<div class="form-inline form-group" >
+									<label for="" class="col-md-5" style="text-align: right; margin: 15px 0px;">流程描述:</label>
+										<div class="col-md-7">
+											<input type="text" id="flowType_detail" class="form-control  input-sm" style='width:200px;margin: 10px 0px;' placeholder="请输入" >
+										</div>
+								</div>
+								<!--<div class="form-inline form-group" >
+									<label for="" class="col-md-5" style="text-align: right;">是否有执行方法:</label>
+									<label class="col-md-7"><input id="have_ex_method" type="checkbox" value="" /></label> 
+								</div>-->
+								
+								<div class="form-inline form-group " >
+									<label for="" class="col-md-5" style="text-align: right;margin: 15px 0px;">流程执行类型:</label>
+										<div class="col-md-7">
+											<select id="op_type" style="width:200px;margin-bottom: 10px;right;margin: 15px 0px;"><option value ='null' data-id=0 >请选择</option></select>
+									
+										</div>
+								</div>
+								
+								<div class="form-inline form-group " >
+									<div class="col-md-4"></div>
+									<a href="javascript:void(0);" class="col-md-1 btn btn-info " style="margin: 10px 0px;padding: 7px 2px;" role="button" onclick="addflow_step()">添加流程过程</a>
+									
+									<div class="col-md-7"></div>
+								</div>	
+								
+								<div class="col-md-12">
+									
+									<div class="flows"  style='position:relative;top:10px ;margin-bottom: 20px;'></div>
+									<!--<div class="" id="refaflow" style='position:relative;top:10px ;margin-bottom: 20px;'></div>-->
+
+								</div>
+								
+								
+                        			
+								<!-- /.box-footer stary-->
+								<!-- 提交模块 start-->
+						        <div class="box-footer  col-md-12">
+						        	 	<!--<div class="col-md-5"></div>-->
+						        		<div class="col-md-5"></div>
+						              	<a  class="btn btn-info btn-sm " style="margin-right: 20px;margin-left: 10px;padding: 7px 10px;" onclick="Apply();" id="sub">保存</a>
+										<a class="btn btn-info btn-sm "  style="margin-right: 20px;padding: 7px 10px;" onclick="closeModel();" id="cancel">取消</a>
+										
+								</div>	  
+							    <!-- 提交模块 end-->
+                        			
+                        		</div>
+                        		<!--默认为不显示 end-->
+                        
+                        </div>
+						<!--box-body end -->
+                        	
+                    </div>
+                </div>
+            
+            </div>
+        		<!--row 流程添加与修改 end-->
+        		
+        		<!--提醒弹框start-->
+        		<div class="confirm_model" style="display: none;">
+	        		<div class="modal fade in" id = "model-default" data-toggle="modal" style="display: block;">
+	        			<div class="modal-dialog">
+	        				<div class="modal-content " >
+	        					<div class="modal-header">删除确认框</div>
+	        					<div class="modal-body" id="message"></div>
+	        					<div class="modal-footer">
+	        						<span class="btn btn-info btn-sm " id="ok">确定</span>
+								<span class="btn btn-info btn-sm " id="no">取消</span>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		</div>
+        		</div>
+        		<!--提醒弹框end-->
+        		
+        </section>
+     	<!-- 列表结束 -->
+     
+    </div>
+   <!-- Content Wrapper.end -->
+    
+    <!-- 页面底部开始 -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.1
+        </div>
+        <strong>Copyright &copy; 2017-2018 <a href="http://www.wesai.com">wesai</a>.</strong> All rights
+        reserved.
+    </footer>
+    <!-- 页面底部结束 -->
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../../assets/js/sys/jquery-cookie-1.4.1.js"></script>
+<!-- DataTables -->
+<script src="../../static/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../static/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../static/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../static/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../static/dist/js/demo.js"></script>
+<!--self js-->
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/flowType/flowType.js"></script>
+<script>
+</script>
+
+</body>
+</html>
